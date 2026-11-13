@@ -1,0 +1,154 @@
+@import '@fontsource-variable/inter-tight';
+@import '@fontsource-variable/manrope';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter Tight Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: #fafaf8;
+  --color-surface: #f1f1ed;
+  --color-line: #e2e2dc;
+  --color-line-strong: #c9c9c2;
+  --color-muted: #5f6168;
+  --color-charcoal: #1f2124;
+  --color-ink: #0e0f11;
+  --color-accent: #b4532a;
+  --color-accent-dark: #93421f;
+  --color-accent-soft: #f5e9e2;
+  --color-ok: #2f6b45;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  ::selection {
+    background: var(--color-accent);
+    color: white;
+  }
+  dialog::backdrop {
+    background: rgb(14 15 17 / 0.6);
+    backdrop-filter: blur(2px);
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10;
+  }
+  .eyebrow {
+    @apply text-[13px] font-semibold tracking-wide text-muted;
+  }
+
+  /* Mygtukai: vienas pagrindinis ir vienas antrinis stilius */
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 text-[15px] font-semibold whitespace-nowrap select-none;
+    transition:
+      transform 160ms var(--ease-out-soft),
+      background-color 160ms,
+      color 160ms,
+      border-color 160ms,
+      box-shadow 160ms;
+  }
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+  .btn:active {
+    transform: translateY(1px) scale(0.985);
+  }
+  .btn-primary {
+    @apply bg-ink text-white hover:bg-charcoal;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 0.08) inset;
+  }
+  .btn-accent {
+    @apply bg-accent text-white hover:bg-accent-dark;
+  }
+  .btn-secondary {
+    @apply border border-line-strong bg-white text-ink hover:border-ink;
+  }
+  .btn-ghost-light {
+    @apply border border-white/35 text-white hover:border-white hover:bg-white/10;
+  }
+
+  .link-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 260ms var(--ease-out-soft);
+  }
+  .link-draw:hover,
+  .link-draw:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-[13px] font-semibold text-charcoal;
+  }
+  .field {
+    @apply block min-h-12 w-full rounded-md border border-line-strong bg-white px-3.5 text-[15px] text-ink placeholder:text-muted/70;
+    transition:
+      border-color 150ms,
+      box-shadow 150ms;
+  }
+  .field:hover {
+    @apply border-muted;
+  }
+  .field:focus {
+    @apply border-ink outline-none;
+    box-shadow: 0 0 0 3px rgb(180 83 42 / 0.18);
+  }
+  select.field {
+    @apply appearance-none pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath stroke='%235f6168' stroke-width='1.6' d='m1 1.5 5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+  textarea.field {
+    @apply py-3;
+  }
+  .field[aria-invalid='true'] {
+    @apply border-accent;
+  }
+
+  /* Nuotrauka rėmelyje šiek tiek priartėja užvedus pelę */
+  .zoom-frame {
+    @apply overflow-hidden;
+  }
+  .zoom-frame img {
+    transition: transform 700ms var(--ease-out-soft);
+  }
+  .group:hover .zoom-frame img,
+  .zoom-frame:hover img {
+    transform: scale(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

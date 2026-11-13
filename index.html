@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="lt" class="js-enter">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fafaf8" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!--head-->
+    <title>Naudoti automobiliai</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="lt_LT" />
+    <style>
+      /* Įėjimo animacijos pradinė būsena; jei JS neįsikrauna per 3 s, turinys parodomas */
+      @media (prefers-reduced-motion: no-preference) {
+        .js-enter [data-enter] { opacity: 0; }
+      }
+    </style>
+    <script>
+      setTimeout(function () {
+        if (!window.__entered) document.documentElement.classList.remove('js-enter')
+      }, 3000)
+    </script>
+  </head>
+  <body>
+    <div id="root"><!--app--></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
