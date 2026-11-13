@@ -5,7 +5,7 @@ import { AppRoutes } from './App'
 import { ROUTER_BASENAME } from './lib/base'
 import { vehicles, vehiclePath } from './lib/inventory'
 
-export { metaFor } from './lib/seo'
+export { metaFor, absoluteUrl } from './lib/seo'
 export { site } from './config/site'
 
 export function render(url: string) {

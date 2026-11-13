@@ -13,7 +13,21 @@ export interface PageMeta {
   jsonLd?: object[]
 }
 
-const abs = (p: string) => `${site.url.replace(/\/$/, '')}${p}`
+/**
+ * GitHub Pages puslapius pateikia su galiniu „/“ (/automobiliai/), todėl ten
+ * kanoniniai adresai turi jį turėti, kitaip kiekvienas veda per 301 peradresavimą.
+ * Nustatoma build metu: VITE_TRAILING_SLASH=true.
+ */
+const TRAILING_SLASH = import.meta.env.VITE_TRAILING_SLASH === 'true'
+
+/** „/automobiliai/“ → „/automobiliai“; šaknis lieka „/“ */
+export const normalizePath = (p: string) => (p.length > 1 ? p.replace(/\/+$/, '') : p)
+
+/** Pilnas puslapio adresas. Failams (su plėtiniu) brūkšnys nepridedamas. */
+const abs = (p: string) => {
+  const isPage = p !== '/' && !/\.[a-z0-9]+$/i.test(p)
+  return `${site.url.replace(/\/$/, '')}${p}${TRAILING_SLASH && isPage ? '/' : ''}`
+}
 
 const dealerLd = () => ({
   '@context': 'https://schema.org',
@@ -55,7 +69,9 @@ const vehicleLd = (v: Vehicle) => ({
 })
 
 /** Vienintelis metaduomenų šaltinis: naudoja ir naršyklė, ir statinio generavimo skriptas. */
-export function metaFor(pathname: string): PageMeta {
+export function metaFor(rawPath: string): PageMeta {
+  // /automobiliai/ ir /automobiliai – tas pats puslapis (GitHub Pages prideda „/“)
+  const pathname = normalizePath(rawPath)
   const city = site.city
   const count = activeVehicles().length
   if (pathname === '/') {

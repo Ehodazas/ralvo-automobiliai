@@ -19,6 +19,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'src/data/vehicles.json')
 const PUBLIC = path.join(ROOT, 'public')
 const WIDTHS = [640, 1080, 1600]
+// Mažesnėms nuotraukoms kokybė aukštesnė, nes artefaktai labiau matomi
+const QUALITY = { 640: 72, 1080: 66, 1600: 62 }
 
 const FUEL = ['benzinas', 'dyzelinas', 'hibridas', 'plug-in-hibridas', 'elektra']
 const GEARBOX = ['automatine', 'mechanine']
@@ -119,7 +121,7 @@ switch (cmd) {
         await sharp(file)
           .rotate()
           .resize({ width: w, height: Math.round((w * 2) / 3), fit: 'cover' })
-          .webp({ quality: 76 })
+          .webp({ quality: QUALITY[w], effort: 6, smartSubsample: true })
           .toFile(path.join(dir, `${i + 1}-${w}.webp`))
       }
       paths.push(`/inventory/${slug}/${i + 1}`)

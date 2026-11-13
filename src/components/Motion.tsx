@@ -79,16 +79,16 @@ export function usePageMotion(scope: RefObject<HTMLElement | null>) {
         const below = (el: Element) => el.getBoundingClientRect().top > window.innerHeight * 0.92
 
         const reveal = gsap.utils.toArray<HTMLElement>('[data-reveal]', root).filter(below)
-        gsap.set(reveal, { opacity: 0, y: 36 })
-        ScrollTrigger.batch(reveal, {
+        if (reveal.length) gsap.set(reveal, { opacity: 0, y: 36 })
+        if (reveal.length) ScrollTrigger.batch(reveal, {
           start: 'top 90%',
           once: true,
           onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.1 }),
         })
 
         const cards = gsap.utils.toArray<HTMLElement>('[data-card]', root).filter(below)
-        gsap.set(cards, { opacity: 0, y: 48, scale: 0.97 })
-        ScrollTrigger.batch(cards, {
+        if (cards.length) gsap.set(cards, { opacity: 0, y: 48, scale: 0.97 })
+        if (cards.length) ScrollTrigger.batch(cards, {
           start: 'top 92%',
           once: true,
           onEnter: (els) =>
@@ -117,7 +117,8 @@ export function usePageMotion(scope: RefObject<HTMLElement | null>) {
         // Saugiklis: jei naršyklė nepiešia kadrų (ekrano kopijų įrankiai), turinys vis tiek parodomas
         const f0 = gsap.ticker.frame
         const t = window.setTimeout(() => {
-          if (gsap.ticker.frame - f0 < 5) gsap.set([...reveal, ...cards], { opacity: 1, y: 0, scale: 1 })
+          const hidden = [...reveal, ...cards]
+          if (hidden.length && gsap.ticker.frame - f0 < 5) gsap.set(hidden, { opacity: 1, y: 0, scale: 1 })
         }, 1500)
         return () => window.clearTimeout(t)
       })

@@ -8,15 +8,15 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DIST = path.join(ROOT, 'dist')
 const SSR = path.join(ROOT, 'dist-ssr')
 
-const { render, routes, metaFor, site, sitemapEntries } = await import(pathToFileURL(path.join(SSR, 'entry-server.js')).href)
+const { render, routes, metaFor, absoluteUrl, site, sitemapEntries } = await import(pathToFileURL(path.join(SSR, 'entry-server.js')).href)
 const template = await fs.readFile(path.join(DIST, 'index.html'), 'utf8')
 const base = site.url.replace(/\/$/, '')
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
 function head(m) {
-  const url = base + m.path
-  const image = base + (m.image ?? '/og.jpg')
+  const url = absoluteUrl(m.path)
+  const image = absoluteUrl(m.image ?? '/og.jpg')
   return [
     `<meta name="description" content="${esc(m.description)}" />`,
     `<link rel="canonical" href="${esc(url)}" />`,
@@ -50,7 +50,7 @@ const today = new Date().toISOString().slice(0, 10)
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapEntries()
-  .map((e) => `  <url><loc>${esc(base + e.path)}</loc><lastmod>${e.lastmod ?? today}</lastmod></url>`)
+  .map((e) => `  <url><loc>${esc(absoluteUrl(e.path))}</loc><lastmod>${e.lastmod ?? today}</lastmod></url>`)
   .join('\n')}
 </urlset>
 `

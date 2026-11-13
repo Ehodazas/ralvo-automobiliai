@@ -31,5 +31,16 @@ export default defineConfig({
   plugins: [react(), tailwindcss(), enquiryApi()],
   build: {
     target: 'es2022',
+    // Bibliotekos atskiruose failuose: po svetainės atnaujinimo naršyklė jų nesisiunčia iš naujo
+    rolldownOptions: {
+      output: {
+        advancedChunks: {
+          groups: [
+            { name: 'react', test: /node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler)[\\/]/ },
+            { name: 'gsap', test: /node_modules[\\/](gsap|@gsap)[\\/]/ },
+          ],
+        },
+      },
+    },
   },
 })
