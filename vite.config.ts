@@ -17,6 +17,10 @@ function enquiryApi(): Plugin {
         const { handleEnquiry } = await import('./server/enquiry.mjs')
         await handleEnquiry(req, res, { dev: true })
       })
+      server.middlewares.use('/api/rezervacija', async (req, res) => {
+        const { handleReservation } = await import('./server/enquiry.mjs')
+        await handleReservation(req, res, { dev: true })
+      })
     },
   }
 }

@@ -2,7 +2,10 @@ import { useEffect, useRef } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { Footer } from './Footer'
 import { Header } from './Header'
+import { usePageMotion } from './Motion'
+import { SearchOverlay } from './Search'
 import { Seo } from './Seo'
+import { Toaster } from './Toaster'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
@@ -23,6 +26,8 @@ function ScrollManager() {
 }
 
 export function Layout() {
+  const main = useRef<HTMLElement>(null)
+  usePageMotion(main)
   return (
     <>
       <a
@@ -34,10 +39,12 @@ export function Layout() {
       <Seo />
       <ScrollManager />
       <Header />
-      <main id="turinys" tabIndex={-1} className="outline-none">
+      <main ref={main} id="turinys" tabIndex={-1} className="outline-none">
         <Outlet />
       </main>
       <Footer />
+      <SearchOverlay />
+      <Toaster />
     </>
   )
 }

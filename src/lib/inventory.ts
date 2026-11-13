@@ -1,5 +1,6 @@
 import data from '../data/vehicles.json'
 import type { Body, Drive, Fuel, Gearbox, Vehicle } from '../types'
+import { bodyLabels, driveLabels, fuelLabels, gearboxLabels } from './labels'
 
 export const vehicles = data as Vehicle[]
 
@@ -147,7 +148,9 @@ export function applyFilters(all: Vehicle[], f: Filters, sort: SortKey): Vehicle
     if (f.kebulas.length && !f.kebulas.includes(v.body)) return false
     if (f.varantieji.length && !f.varantieji.includes(v.drive)) return false
     if (q) {
-      const hay = normalize(`${v.make} ${v.model} ${v.version} ${v.year} ${v.color}`)
+      const hay = normalize(
+        `${v.make} ${v.model} ${v.version} ${v.year} ${v.color} ${fuelLabels[v.fuel]} ${gearboxLabels[v.gearbox]} ${bodyLabels[v.body]} ${driveLabels[v.drive]}`,
+      )
       if (!q.split(/\s+/).every((t) => hay.includes(t))) return false
     }
     return true

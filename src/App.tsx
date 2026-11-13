@@ -1,8 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import About from './pages/About'
+import Cart from './pages/Cart'
 import Contact from './pages/Contact'
 import Credits from './pages/Credits'
+import Favorites from './pages/Favorites'
 import Home from './pages/Home'
 import Inventory from './pages/Inventory'
 import NotFound from './pages/NotFound'
@@ -20,6 +22,8 @@ export function AppRoutes() {
         <Route path="kontaktai" element={<Contact />} />
         <Route path="privatumo-politika" element={<Privacy />} />
         <Route path="nuotraukos" element={<Credits />} />
+        <Route path="patinka" element={<Favorites />} />
+        <Route path="krepselis" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

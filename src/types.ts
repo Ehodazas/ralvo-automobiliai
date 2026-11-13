@@ -13,6 +13,8 @@ export interface Vehicle {
   /** Pirmosios registracijos mėnuo, YYYY-MM */
   firstRegistration: string
   price: number
+  /** Ankstesnė kaina, jei ji buvo sumažinta (rodoma perbraukta) */
+  previousPrice?: number | null
   mileage: number
   fuel: Fuel
   gearbox: Gearbox

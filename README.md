@@ -15,10 +15,18 @@ A website for one Lithuanian used-car dealer, built with React 19, TypeScript, V
 | `/kontaktai` | Kontaktai with the enquiry form |
 | `/privatumo-politika` | Privacy policy (GDPR) |
 | `/nuotraukos` | Photo credits (required by the CC licences) |
+| `/patinka` | Cars marked with ♥ (stored in the visitor's browser) |
+| `/krepselis` | Cart: up to 3 cars plus a reservation request form (contacts, viewing day and time). No online payment. |
+
+Across the site:
+
+- **Global search** opens from the header button, `/` or Ctrl+K. Results appear as you type and can be picked with the arrow keys. It searches brand, model, version, year, colour, fuel, gearbox, body type and drive.
+- **♥ (Patinka) and cart buttons** on every card and car page, with counters in the header. The lists are kept in `localStorage`: there are no accounts, and nothing is sent until the visitor submits a reservation.
+- **Price drops**: a car with `previousPrice` shows the old price struck through and a "−X €" badge. `npm run inventory -- price` sets `previousPrice` automatically when you lower a price.
 
 ## Why there is a small backend
 
-A static frontend cannot send email or store anything. The enquiry form therefore posts to `POST /api/uzklausa`, handled in [server/enquiry.mjs](server/enquiry.mjs):
+A static frontend cannot send email or store anything. The enquiry form posts to `POST /api/uzklausa`, and cart reservations post to `POST /api/rezervacija`. Both are handled in [server/enquiry.mjs](server/enquiry.mjs):
 
 - It validates the input, has a hidden honeypot field and allows 5 requests per IP per 10 minutes (held in memory only).
 - It sends the enquiry by **SMTP email** to `MAIL_TO`.
@@ -92,6 +100,8 @@ What each status does on the site:
 
 - **Sold** (`sold`): hidden from the list by default and shown only when "Rodyti ir parduotus" is ticked. The car page stays online with a "parduotas" banner, so old links and search results still work.
 - **Reserved** (`reserved`): shown with a "Rezervuotas" badge and a note on the car page.
+
+**Handling a reservation:** the dealer receives an email listing the cars, contact details and the preferred viewing time. The server rejects sold or already reserved cars. A request **does not** change the car's status by itself. After confirming by phone, run `npm run inventory -- reserved <slug>`, rebuild and deploy; the car then shows as "Rezervuotas" and can no longer be added to carts.
 
 **Adding a car:**
 
@@ -170,6 +180,7 @@ public/inventory/       car photos (WebP, 3 sizes)
 ## Design and motion notes
 
 - Palette: warm white `#fafaf8`, charcoal, black, and one copper accent `#b4532a`. Type: Inter Tight for headings and Manrope for body text, both self-hosted with Lithuanian glyphs. No Google Fonts requests are made, which keeps the privacy policy simple.
-- Motion uses GSAP through `useGSAP`, scoped and cleaned up on unmount. There is one hero entrance on load and one scroll-linked moment (the photo in "Kaip vyksta pirkimas"). Hover gives small lifts and photo zooms. There are no fade-ins on every section. All motion is off under `prefers-reduced-motion`. If the browser does not draw frames, a timer finishes the entrance animation so content is never left hidden.
+- Style mix from the reference sites: a dark cinematic hero with body-type tiles (Stampede Auto), a big live search and ♥ in the header (Arnold Clark), a benefits strip, quick-search chips, a price-drop carousel and spec chips on cards (Big Motoring World), and ♥ on cards with filter counts (Longo). Sewell.com refused automated access and was not used.
+- Motion uses GSAP through `useGSAP`, scoped and cleaned up on unmount: a hero entrance with background zoom and parallax, word-by-word headings, cards rising in groups on scroll, counters that count up, a buying-steps timeline that fills as you scroll, a photo that sharpens into view on scroll, page transitions, a ♥ pop with a small burst, the car photo flying into the header cart, toasts, and CSS marquees for the benefits strip and brands. Cards show their second photo on hover. All motion is off under `prefers-reduced-motion`. If the browser does not draw frames, timers make sure no content stays hidden.
 - Accessibility: skip link, visible focus rings, labelled fields with errors under each field, native `<dialog>` for the lightbox and the filter drawer, `aria-live` result count, and touch targets of at least 44 px.
 - No cookies, analytics or third-party embeds are used, so no consent banner is needed. "Rodyti žemėlapyje" is a plain link to OpenStreetMap, not an iframe.

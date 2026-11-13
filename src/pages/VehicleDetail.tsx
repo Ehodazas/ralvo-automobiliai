@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { AddToCartButton, FavoriteButton } from '../components/Actions'
 import { EnquiryForm } from '../components/EnquiryForm'
 import { Gallery } from '../components/Gallery'
 import { Icon, type IconName } from '../components/Icon'
@@ -20,6 +21,7 @@ export default function VehicleDetail() {
   const sold = v.status === 'sold'
   const reserved = v.status === 'reserved'
   const title = vehicleTitle(v)
+  const drop = v.previousPrice && v.previousPrice > v.price ? v.previousPrice - v.price : 0
 
   const keyFacts: { icon: IconName; label: string; value: string }[] = [
     { icon: 'calendar', label: 'Metai', value: String(v.year) },
@@ -105,7 +107,9 @@ export default function VehicleDetail() {
 
       <div className="wrap mt-6 grid gap-10 lg:mt-8 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-7 xl:col-span-8">
-          <Gallery photos={v.photos} alt={`${title}, ${v.year} m.`} dimmed={sold} />
+          <div data-fly-root>
+            <Gallery photos={v.photos} alt={`${title}, ${v.year} m.`} dimmed={sold} />
+          </div>
         </div>
 
         <aside className="lg:col-span-5 xl:col-span-4" aria-label="Kaina ir kontaktai">
@@ -118,12 +122,24 @@ export default function VehicleDetail() {
                   {v.version}, {v.year} m.
                 </p>
               </div>
+              <FavoriteButton vehicle={v} size="lg" className="shrink-0" />
             </div>
 
             <p className={`mt-6 font-display text-[40px] leading-none font-semibold tracking-tight ${sold ? 'text-muted line-through decoration-2' : ''}`}>
               <span className="sr-only">Kaina: </span>
               {formatPrice(v.price)}
             </p>
+            {drop > 0 && !sold && (
+              <p className="mt-2 flex items-center gap-2 text-[14px]">
+                <span className="inline-flex items-center gap-1 rounded bg-accent px-2 py-0.5 font-bold text-white">
+                  <Icon name="trendDown" size={14} />−{formatPrice(drop)}
+                </span>
+                <span className="text-muted line-through">
+                  <span className="sr-only">Ankstesnė kaina: </span>
+                  {formatPrice(v.previousPrice!)}
+                </span>
+              </p>
+            )}
 
             <dl className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
               {keyFacts.map((k) => (
@@ -148,7 +164,10 @@ export default function VehicleDetail() {
                     Automobilis rezervuotas. Parašykite – pranešime, jei rezervacija bus atšaukta.
                   </p>
                 )}
-                <a href="#uzklausa" className="btn btn-accent w-full">
+                <AddToCartButton vehicle={v} variant="full" goToCart className="btn-shine" />
+                {!reserved && <AddToCartButton vehicle={v} variant="full" />}
+                <a href="#uzklausa" className="btn btn-secondary w-full">
+                  <Icon name="mail" size={18} />
                   Rašyti užklausą
                 </a>
                 {site.phone && site.phoneHref && (
@@ -265,9 +284,16 @@ export default function VehicleDetail() {
                 <Icon name="phone" size={18} />
               </a>
             )}
-            <a href="#uzklausa" className="btn btn-accent min-h-11">
-              Užklausa
-            </a>
+            <FavoriteButton vehicle={v} />
+            {reserved ? (
+              <a href="#uzklausa" className="btn btn-accent min-h-11">
+                Užklausa
+              </a>
+            ) : (
+              <div className="w-auto">
+                <AddToCartButton vehicle={v} variant="full" goToCart compact className="min-h-11 px-4" />
+              </div>
+            )}
           </div>
         </div>
       )}

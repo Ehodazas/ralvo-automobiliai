@@ -109,6 +109,12 @@ export function metaFor(pathname: string): PageMeta {
       path: '/privatumo-politika',
     }
   }
+  if (pathname === '/patinka') {
+    return { title: `Patinkantys automobiliai | ${site.name}`, description: 'Jūsų pažymėti automobiliai.', path: '/patinka', noindex: true }
+  }
+  if (pathname === '/krepselis') {
+    return { title: `Krepšelis ir rezervacija | ${site.name}`, description: 'Pasirinkti automobiliai ir rezervacijos užklausa.', path: '/krepselis', noindex: true }
+  }
   return {
     title: `Puslapis nerastas | ${site.name}`,
     description: 'Tokio puslapio nėra.',

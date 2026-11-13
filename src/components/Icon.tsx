@@ -68,6 +68,34 @@ const paths = {
     </>
   ),
   bolt: <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" />,
+  heart: <path d="M12 20s-7.5-4.6-9.2-9.4C1.6 7.3 3.7 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.5 0 5.6 3.3 4.4 6.6C19.5 15.4 12 20 12 20Z" />,
+  cart: (
+    <>
+      <path d="M3 4h2.2l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.3a1.5 1.5 0 0 0 1.5-1.1L21 8H6.2" />
+      <circle cx="9.5" cy="20" r="1.3" />
+      <circle cx="17" cy="20" r="1.3" />
+    </>
+  ),
+  camera: (
+    <>
+      <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z" />
+      <circle cx="12" cy="13" r="3.5" />
+    </>
+  ),
+  trendDown: <path d="m3 7 6 6 4-4 8 8m0 0h-6m6 0v-6" />,
+  shield: (
+    <>
+      <path d="M12 3 5 6v5c0 4.4 3 8.3 7 10 4-1.7 7-5.6 7-10V6l-7-3Z" />
+      <path d="m9 12 2 2 4-4" />
+    </>
+  ),
+  key: (
+    <>
+      <circle cx="8" cy="15" r="4" />
+      <path d="m11 12 9-9m-4 4 3 3m-6 0 2 2" />
+    </>
+  ),
+  trash: <path d="M4 7h16M10 11v6m4-6v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3" />,
 } as const
 
 export type IconName = keyof typeof paths

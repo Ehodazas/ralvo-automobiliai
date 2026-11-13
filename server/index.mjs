@@ -5,7 +5,7 @@ import http from 'node:http'
 import path from 'node:path'
 import zlib from 'node:zlib'
 import { fileURLToPath } from 'node:url'
-import { handleEnquiry } from './enquiry.mjs'
+import { handleEnquiry, handleReservation } from './enquiry.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DIST = path.join(ROOT, 'dist')
@@ -89,9 +89,10 @@ const server = http.createServer(async (req, res) => {
   for (const [k, v] of Object.entries(SECURITY_HEADERS)) res.setHeader(k, v)
   const url = new URL(req.url ?? '/', 'http://localhost')
 
-  if (url.pathname === '/api/uzklausa') {
+  const api = { '/api/uzklausa': handleEnquiry, '/api/rezervacija': handleReservation }[url.pathname]
+  if (api) {
     try {
-      await handleEnquiry(req, res)
+      await api(req, res)
     } catch (e) {
       console.error(e)
       if (!res.headersSent) res.writeHead(500).end()

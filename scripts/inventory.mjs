@@ -96,9 +96,13 @@ switch (cmd) {
       console.error('Nurodykite kainą eurais, pvz.: npm run inventory -- price ' + slug + ' 18900')
       process.exit(1)
     }
+    const old = v.price
     v.price = Math.round(price)
+    // Sumažinus kainą, sena rodoma perbraukta su „kaina sumažinta“ ženkliuku
+    if (v.price < old) v.previousPrice = Math.max(old, v.previousPrice ?? 0)
+    else delete v.previousPrice
     await save(list)
-    console.log(`${v.make} ${v.model}: nauja kaina ${v.price} €`)
+    console.log(`${v.make} ${v.model}: nauja kaina ${v.price} €${v.previousPrice ? ` (buvo ${v.previousPrice} €)` : ''}`)
     break
   }
   case 'photos': {

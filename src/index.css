@@ -143,7 +143,84 @@
   }
 }
 
+/* Besisukantis švytintis paieškos lauko kraštas */
+@property --glow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes glow-spin {
+  to {
+    --glow-angle: 360deg;
+  }
+}
+/* Spalvotas tik 2 px kraštas: vidus baltas (padding-box), gradientas – kraštinėje (border-box) */
+.search-glow {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    conic-gradient(from var(--glow-angle), #b4532a, #f0a37f 15%, rgb(255 255 255 / 0.35) 35%, rgb(255 255 255 / 0.35) 75%, #b4532a) border-box;
+  animation: glow-spin 5s linear infinite;
+}
+
+/* Begalinė juosta: dvi vienodos kopijos slenka kairėn */
+@keyframes marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (min-width: 1024px) {
+  .marquee .marquee-track {
+    animation: none;
+  }
+}
+.marquee-slow .marquee-track {
+  animation-duration: 45s;
+}
+@media (min-width: 1024px) {
+  .marquee-slow .marquee-track {
+    animation: marquee 45s linear infinite;
+  }
+}
+
+/* Antra nuotrauka kortelėje: pasirodo užvedus pelę */
+.card-photo-alt {
+  opacity: 0;
+  transition: opacity 500ms var(--ease-out-soft);
+}
+.group:hover .card-photo-alt {
+  opacity: 1;
+}
+
+/* Blizgesio juosta per mygtuką */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.28) 50%, transparent 70%);
+  transform: translateX(-120%);
+}
+.btn-shine:hover::after {
+  transition: transform 700ms var(--ease-out-soft);
+  transform: translateX(120%);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
   *,
   *::before,
   *::after {

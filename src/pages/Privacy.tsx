@@ -50,11 +50,12 @@ export default function Privacy() {
             </Section>
 
             <Section title="Kokius duomenis renkame">
-              <p>Pateikdami užklausą nurodote:</p>
+              <p>Pateikdami užklausą ar rezervaciją nurodote:</p>
               <ul className="list-disc space-y-1 pl-5">
                 <li>vardą;</li>
                 <li>telefono numerį ir (arba) el. pašto adresą;</li>
-                <li>žinutės tekstą ir automobilį, dėl kurio kreipiatės.</li>
+                <li>žinutės tekstą ir automobilį (-ius), dėl kurio kreipiatės;</li>
+                <li>rezervacijos atveju – pageidaujamą apžiūros dieną ir laiką.</li>
               </ul>
               <p>
                 Siekdamas apsaugoti formą nuo piktnaudžiavimo, serveris trumpam įsimena užklausą siuntusio įrenginio IP adresą. Jis nesaugomas kartu su
@@ -65,7 +66,7 @@ export default function Privacy() {
             <Section title="Kam naudojame duomenis ir kuo remiamės">
               <ul className="list-disc space-y-2 pl-5">
                 <li>
-                  <strong>Atsakyti į užklausą ir suderinti automobilio apžiūrą.</strong> Teisinis pagrindas – veiksmai jūsų prašymu prieš sudarant sutartį (BDAR
+                  <strong>Atsakyti į užklausą, patvirtinti rezervaciją ir suderinti automobilio apžiūrą.</strong> Teisinis pagrindas – veiksmai jūsų prašymu prieš sudarant sutartį (BDAR
                   6 str. 1 d. b p.).
                 </li>
                 <li>
@@ -92,6 +93,10 @@ export default function Privacy() {
             <Section title="Slapukai ir trečiųjų šalių paslaugos">
               <p>
                 Ši svetainė nenaudoja slapukų, analitikos ar reklamos įrankių, todėl sutikimo juostos nėra. Šriftai ir nuotraukos talpinami pačioje svetainėje.
+              </p>
+              <p>
+                Jūsų pažymėti patinkantys automobiliai ir krepšelio turinys saugomi tik jūsų naršyklėje (vietinėje saugykloje, „localStorage“). Šie
+                sąrašai mums nesiunčiami, kol patys nepateikiate rezervacijos. Juos ištrinsite išvalę sąrašą svetainėje arba naršyklės duomenis.
               </p>
               <p>
                 Nuoroda „Rodyti žemėlapyje“ atidaro OpenStreetMap svetainę naujame lange. Joje taikoma{' '}

@@ -25,16 +25,52 @@
     "firstRegCountry": "Vokietija",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["Aklosios zonos stebėjimas (BLIS)", "Adaptyvi pastovaus greičio palaikymo sistema", "Juostos palaikymo sistema", "Automatinis stabdymas mieste"] },
-      { "group": "Salonas", "items": ["Odinės sėdynės", "Šildomos priekinės sėdynės", "Šildomas vairas", "Dviejų zonų klimato kontrolė", "Elektra reguliuojama vairuotojo sėdynė su atmintimi"] },
-      { "group": "Multimedija", "items": ["9 colių jutiklinis ekranas", "Apple CarPlay ir Android Auto", "Skaitmeninis prietaisų skydelis", "Navigacija"] },
-      { "group": "Eksterjeras", "items": ["LED žibintai", "19 colių lengvojo lydinio ratlankiai", "Elektra valdomas bagažinės dangtis", "Stogo bėgeliai"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Aklosios zonos stebėjimas (BLIS)",
+          "Adaptyvi pastovaus greičio palaikymo sistema",
+          "Juostos palaikymo sistema",
+          "Automatinis stabdymas mieste"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Odinės sėdynės",
+          "Šildomos priekinės sėdynės",
+          "Šildomas vairas",
+          "Dviejų zonų klimato kontrolė",
+          "Elektra reguliuojama vairuotojo sėdynė su atmintimi"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "9 colių jutiklinis ekranas",
+          "Apple CarPlay ir Android Auto",
+          "Skaitmeninis prietaisų skydelis",
+          "Navigacija"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "LED žibintai",
+          "19 colių lengvojo lydinio ratlankiai",
+          "Elektra valdomas bagažinės dangtis",
+          "Stogo bėgeliai"
+        ]
+      }
     ],
     "description": [
       "Volvo V60 Cross Country su padidintu prošvaisos aukščiu ir visais varančiaisiais ratais. Automobilis atvežtas iš Vokietijos, serviso istorija su įrašais.",
       "Komplekte dvi raktų kopijos ir žieminių padangų komplektas ant ratlankių."
     ],
-    "photos": ["/inventory/volvo-v60-cross-country-2020/1", "/inventory/volvo-v60-cross-country-2020/2"],
+    "photos": [
+      "/inventory/volvo-v60-cross-country-2020/1",
+      "/inventory/volvo-v60-cross-country-2020/2"
+    ],
     "status": "available",
     "addedAt": "2026-11-10"
   },
@@ -46,6 +82,7 @@
     "year": 2018,
     "firstRegistration": "2018-05",
     "price": 27500,
+    "previousPrice": 28900,
     "mileage": 172400,
     "fuel": "dyzelinas",
     "gearbox": "automatine",
@@ -64,16 +101,49 @@
     "firstRegCountry": "Austrija",
     "defects": "Smulkūs įbrėžimai ant galinio buferio",
     "features": [
-      { "group": "Saugumas", "items": ["Driving Assistant", "Parkavimo jutikliai priekyje ir gale", "Galinio vaizdo kamera"] },
-      { "group": "Salonas", "items": ["Odinės sportinės sėdynės", "Šildomos priekinės sėdynės", "Keturių zonų klimato kontrolė", "Panoraminis stoglangis"] },
-      { "group": "Multimedija", "items": ["iDrive su 10,25 colio ekranu", "Navigacija Professional", "Projekcinis ekranas (HUD)", "Harman Kardon garso sistema"] },
-      { "group": "Eksterjeras", "items": ["Adaptyvūs LED žibintai", "18 colių ratlankiai", "Elektra valdomas bagažinės dangtis"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Driving Assistant",
+          "Parkavimo jutikliai priekyje ir gale",
+          "Galinio vaizdo kamera"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Odinės sportinės sėdynės",
+          "Šildomos priekinės sėdynės",
+          "Keturių zonų klimato kontrolė",
+          "Panoraminis stoglangis"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "iDrive su 10,25 colio ekranu",
+          "Navigacija Professional",
+          "Projekcinis ekranas (HUD)",
+          "Harman Kardon garso sistema"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "Adaptyvūs LED žibintai",
+          "18 colių ratlankiai",
+          "Elektra valdomas bagažinės dangtis"
+        ]
+      }
     ],
     "description": [
       "Šešių cilindrų 3.0 litro dyzelinis variklis ir xDrive visų ratų pavara. Automobilis prižiūrėtas oficialiame servise, paskutinis tepalų keitimas atliktas prie 168 000 km.",
       "Ant galinio buferio yra keli smulkūs įbrėžimai, kuriuos parodysime apžiūros metu."
     ],
-    "photos": ["/inventory/bmw-530d-xdrive-touring-2018/1", "/inventory/bmw-530d-xdrive-touring-2018/2"],
+    "photos": [
+      "/inventory/bmw-530d-xdrive-touring-2018/1",
+      "/inventory/bmw-530d-xdrive-touring-2018/2"
+    ],
     "status": "available",
     "addedAt": "2026-11-08"
   },
@@ -103,16 +173,49 @@
     "firstRegCountry": "Lietuva",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["Toyota Safety Sense", "Adaptyvi pastovaus greičio palaikymo sistema", "360° kamerų sistema", "Aklosios zonos stebėjimas"] },
-      { "group": "Salonas", "items": ["Šildomos ir vėdinamos priekinės sėdynės", "Šildomas vairas", "Dviejų zonų klimato kontrolė", "Belaidis telefono įkrovimas"] },
-      { "group": "Multimedija", "items": ["9 colių ekranas", "Apple CarPlay ir Android Auto", "JBL garso sistema"] },
-      { "group": "Eksterjeras", "items": ["LED žibintai", "19 colių ratlankiai", "Elektra valdomas bagažinės dangtis"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Toyota Safety Sense",
+          "Adaptyvi pastovaus greičio palaikymo sistema",
+          "360° kamerų sistema",
+          "Aklosios zonos stebėjimas"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Šildomos ir vėdinamos priekinės sėdynės",
+          "Šildomas vairas",
+          "Dviejų zonų klimato kontrolė",
+          "Belaidis telefono įkrovimas"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "9 colių ekranas",
+          "Apple CarPlay ir Android Auto",
+          "JBL garso sistema"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "LED žibintai",
+          "19 colių ratlankiai",
+          "Elektra valdomas bagažinės dangtis"
+        ]
+      }
     ],
     "description": [
       "Įkraunamas hibridas, kuriuo mieste galima nuvažiuoti apie 70 km vien elektra. Pirktas naujas Lietuvoje, vienas savininkas.",
       "Kartu su automobiliu perduodamas įkrovimo laidas namų lizdui ir Type 2 laidas viešoms įkrovimo stotelėms."
     ],
-    "photos": ["/inventory/toyota-rav4-plug-in-hybrid-2021/1", "/inventory/toyota-rav4-plug-in-hybrid-2021/2"],
+    "photos": [
+      "/inventory/toyota-rav4-plug-in-hybrid-2021/1",
+      "/inventory/toyota-rav4-plug-in-hybrid-2021/2"
+    ],
     "status": "available",
     "addedAt": "2026-11-06"
   },
@@ -142,16 +245,48 @@
     "firstRegCountry": "Vokietija",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["Autopilot", "8 išorinės kameros", "Automatinis avarinis stabdymas"] },
-      { "group": "Salonas", "items": ["Šildomos ir vėdinamos priekinės sėdynės", "Šildomos galinės sėdynės", "Ambientinis apšvietimas", "Stiklinis stogas"] },
-      { "group": "Multimedija", "items": ["15,4 colio centrinis ekranas", "8 colių ekranas galinėms sėdynėms", "Premium garso sistema"] },
-      { "group": "Eksterjeras", "items": ["Matrix LED žibintai", "18 colių ratlankiai", "Elektra valdomas bagažinės dangtis"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Autopilot",
+          "8 išorinės kameros",
+          "Automatinis avarinis stabdymas"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Šildomos ir vėdinamos priekinės sėdynės",
+          "Šildomos galinės sėdynės",
+          "Ambientinis apšvietimas",
+          "Stiklinis stogas"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "15,4 colio centrinis ekranas",
+          "8 colių ekranas galinėms sėdynėms",
+          "Premium garso sistema"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "Matrix LED žibintai",
+          "18 colių ratlankiai",
+          "Elektra valdomas bagažinės dangtis"
+        ]
+      }
     ],
     "description": [
       "Atnaujintos kartos Model 3 su visais varančiaisiais ratais. Gamyklinė baterijos ir pavaros garantija galioja iki 2032 m. arba 192 000 km.",
       "Baterijos būklės ataskaitą galime atsiųsti el. paštu."
     ],
-    "photos": ["/inventory/tesla-model-3-long-range-2024/1", "/inventory/tesla-model-3-long-range-2024/2"],
+    "photos": [
+      "/inventory/tesla-model-3-long-range-2024/1",
+      "/inventory/tesla-model-3-long-range-2024/2"
+    ],
     "status": "reserved",
     "addedAt": "2026-11-04"
   },
@@ -163,6 +298,7 @@
     "year": 2019,
     "firstRegistration": "2019-09",
     "price": 17600,
+    "previousPrice": 18500,
     "mileage": 109200,
     "fuel": "dyzelinas",
     "gearbox": "automatine",
@@ -181,16 +317,50 @@
     "firstRegCountry": "Prancūzija",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["Juostos palaikymo sistema", "Kelio ženklų atpažinimas", "Parkavimo jutikliai priekyje ir gale", "Galinio vaizdo kamera"] },
-      { "group": "Salonas", "items": ["i-Cockpit su skaitmeniniu skydeliu", "Dviejų zonų klimato kontrolė", "Ambientinis apšvietimas"] },
-      { "group": "Multimedija", "items": ["8 colių jutiklinis ekranas", "Navigacija", "Apple CarPlay ir Android Auto"] },
-      { "group": "Eksterjeras", "items": ["Full LED žibintai", "18 colių ratlankiai", "Tamsinti galiniai stiklai"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Juostos palaikymo sistema",
+          "Kelio ženklų atpažinimas",
+          "Parkavimo jutikliai priekyje ir gale",
+          "Galinio vaizdo kamera"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "i-Cockpit su skaitmeniniu skydeliu",
+          "Dviejų zonų klimato kontrolė",
+          "Ambientinis apšvietimas"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "8 colių jutiklinis ekranas",
+          "Navigacija",
+          "Apple CarPlay ir Android Auto"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "Full LED žibintai",
+          "18 colių ratlankiai",
+          "Tamsinti galiniai stiklai"
+        ]
+      }
     ],
     "description": [
       "Ekonomiškas 1.5 BlueHDi variklis su 8 laipsnių automatine pavarų dėže. Vidutinės sąnaudos mišriu režimu apie 5,2 l/100 km.",
       "Prieš pardavimą pakeisti tepalai, filtrai ir priekiniai stabdžių diskai su trinkelėmis."
     ],
-    "photos": ["/inventory/peugeot-3008-2019/1", "/inventory/peugeot-3008-2019/2", "/inventory/peugeot-3008-2019/3", "/inventory/peugeot-3008-2019/4"],
+    "photos": [
+      "/inventory/peugeot-3008-2019/1",
+      "/inventory/peugeot-3008-2019/2",
+      "/inventory/peugeot-3008-2019/3",
+      "/inventory/peugeot-3008-2019/4"
+    ],
     "status": "available",
     "addedAt": "2026-11-03"
   },
@@ -202,6 +372,7 @@
     "year": 2019,
     "firstRegistration": "2019-02",
     "price": 29900,
+    "previousPrice": 30900,
     "mileage": 138600,
     "fuel": "dyzelinas",
     "gearbox": "automatine",
@@ -220,16 +391,48 @@
     "firstRegCountry": "Vokietija",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["Adaptyvi pastovaus greičio palaikymo sistema", "Juostos palaikymo sistema", "Parkavimo asistentas"] },
-      { "group": "Salonas", "items": ["Sportinės sėdynės", "Šildomos priekinės sėdynės", "Keturių zonų klimato kontrolė", "Bekontaktis užvedimas"] },
-      { "group": "Multimedija", "items": ["MMI touch response su dviem ekranais", "Audi virtual cockpit", "Navigacija MMI Plus"] },
-      { "group": "Eksterjeras", "items": ["Matrix LED žibintai", "19 colių ratlankiai", "S line išorės paketas"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Adaptyvi pastovaus greičio palaikymo sistema",
+          "Juostos palaikymo sistema",
+          "Parkavimo asistentas"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Sportinės sėdynės",
+          "Šildomos priekinės sėdynės",
+          "Keturių zonų klimato kontrolė",
+          "Bekontaktis užvedimas"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "MMI touch response su dviem ekranais",
+          "Audi virtual cockpit",
+          "Navigacija MMI Plus"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "Matrix LED žibintai",
+          "19 colių ratlankiai",
+          "S line išorės paketas"
+        ]
+      }
     ],
     "description": [
       "A6 Avant su quattro pavara ir S line išorės paketu. Serviso knygelė su įrašais, paskutinis aptarnavimas atliktas 2026 m. rugsėjį.",
       "Salonas be nusidėvėjimo žymių, nerūkyta."
     ],
-    "photos": ["/inventory/audi-a6-avant-40-tdi-2019/1", "/inventory/audi-a6-avant-40-tdi-2019/2"],
+    "photos": [
+      "/inventory/audi-a6-avant-40-tdi-2019/1",
+      "/inventory/audi-a6-avant-40-tdi-2019/2"
+    ],
     "status": "available",
     "addedAt": "2026-10-30"
   },
@@ -259,16 +462,46 @@
     "firstRegCountry": "Lietuva",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["Toyota Safety Sense 3", "Adaptyvi pastovaus greičio palaikymo sistema", "Galinio vaizdo kamera"] },
-      { "group": "Salonas", "items": ["Šildomos priekinės sėdynės", "Dviejų zonų klimato kontrolė", "Bekontaktis užvedimas"] },
-      { "group": "Multimedija", "items": ["10,5 colio ekranas", "Belaidis Apple CarPlay ir Android Auto", "12,3 colio skaitmeninis skydelis"] },
-      { "group": "Eksterjeras", "items": ["LED žibintai", "17 colių ratlankiai"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Toyota Safety Sense 3",
+          "Adaptyvi pastovaus greičio palaikymo sistema",
+          "Galinio vaizdo kamera"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Šildomos priekinės sėdynės",
+          "Dviejų zonų klimato kontrolė",
+          "Bekontaktis užvedimas"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "10,5 colio ekranas",
+          "Belaidis Apple CarPlay ir Android Auto",
+          "12,3 colio skaitmeninis skydelis"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "LED žibintai",
+          "17 colių ratlankiai"
+        ]
+      }
     ],
     "description": [
       "Pirktas naujas Lietuvoje, vienas savininkas. Galioja gamintojo garantija, kurią galima pratęsti atliekant aptarnavimą oficialiame servise.",
       "Mieste vidutinės sąnaudos apie 4,3 l/100 km."
     ],
-    "photos": ["/inventory/toyota-corolla-hybrid-2023/1", "/inventory/toyota-corolla-hybrid-2023/2"],
+    "photos": [
+      "/inventory/toyota-corolla-hybrid-2023/1",
+      "/inventory/toyota-corolla-hybrid-2023/2"
+    ],
     "status": "available",
     "addedAt": "2026-10-28"
   },
@@ -298,16 +531,49 @@
     "firstRegCountry": "Švedija",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["City Safety", "Pilot Assist", "Aklosios zonos stebėjimas (BLIS)", "Parkavimo jutikliai priekyje ir gale"] },
-      { "group": "Salonas", "items": ["Odinės sėdynės", "Šildomos priekinės sėdynės", "Šildomas vairas", "Dviejų zonų klimato kontrolė"] },
-      { "group": "Multimedija", "items": ["Sensus Navigation", "9 colių vertikalus ekranas", "Apple CarPlay ir Android Auto"] },
-      { "group": "Eksterjeras", "items": ["LED žibintai „Thor's Hammer“", "18 colių ratlankiai", "Kablys"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "City Safety",
+          "Pilot Assist",
+          "Aklosios zonos stebėjimas (BLIS)",
+          "Parkavimo jutikliai priekyje ir gale"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Odinės sėdynės",
+          "Šildomos priekinės sėdynės",
+          "Šildomas vairas",
+          "Dviejų zonų klimato kontrolė"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "Sensus Navigation",
+          "9 colių vertikalus ekranas",
+          "Apple CarPlay ir Android Auto"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "LED žibintai „Thor's Hammer“",
+          "18 colių ratlankiai",
+          "Kablys"
+        ]
+      }
     ],
     "description": [
       "Volvo XC60 su visais varančiaisiais ratais ir kabliu, tinka priekabai iki 2400 kg. Atvežtas iš Švedijos, visa serviso istorija Volvo sistemoje.",
       "Paskirstymo diržo komplektas pakeistas prie 118 000 km."
     ],
-    "photos": ["/inventory/volvo-xc60-d4-awd-2019/1", "/inventory/volvo-xc60-d4-awd-2019/2"],
+    "photos": [
+      "/inventory/volvo-xc60-d4-awd-2019/1",
+      "/inventory/volvo-xc60-d4-awd-2019/2"
+    ],
     "status": "available",
     "addedAt": "2026-10-24"
   },
@@ -337,16 +603,47 @@
     "firstRegCountry": "Vokietija",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["Front Assist", "Lane Assist", "Parkavimo jutikliai priekyje ir gale"] },
-      { "group": "Salonas", "items": ["Šildomos priekinės sėdynės", "Šildomas vairas", "Trijų zonų klimato kontrolė"] },
-      { "group": "Multimedija", "items": ["10 colių navigacijos ekranas", "Virtual Cockpit", "Belaidis SmartLink"] },
-      { "group": "Eksterjeras", "items": ["Full LED Matrix žibintai", "17 colių ratlankiai", "Elektra valdomas bagažinės dangtis"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Front Assist",
+          "Lane Assist",
+          "Parkavimo jutikliai priekyje ir gale"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Šildomos priekinės sėdynės",
+          "Šildomas vairas",
+          "Trijų zonų klimato kontrolė"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "10 colių navigacijos ekranas",
+          "Virtual Cockpit",
+          "Belaidis SmartLink"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "Full LED Matrix žibintai",
+          "17 colių ratlankiai",
+          "Elektra valdomas bagažinės dangtis"
+        ]
+      }
     ],
     "description": [
       "Talpus universalas su 640 litrų bagažine ir ekonomišku 2.0 TDI varikliu. Atvežtas iš Vokietijos, ridą patvirtina serviso įrašai.",
       "Tinka šeimai ir ilgoms kelionėms."
     ],
-    "photos": ["/inventory/skoda-octavia-combi-2021/1", "/inventory/skoda-octavia-combi-2021/2"],
+    "photos": [
+      "/inventory/skoda-octavia-combi-2021/1",
+      "/inventory/skoda-octavia-combi-2021/2"
+    ],
     "status": "available",
     "addedAt": "2026-10-20"
   },
@@ -358,6 +655,7 @@
     "year": 2019,
     "firstRegistration": "2019-11",
     "price": 17900,
+    "previousPrice": 19400,
     "mileage": 148300,
     "fuel": "dyzelinas",
     "gearbox": "automatine",
@@ -376,16 +674,47 @@
     "firstRegCountry": "Nyderlandai",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["Adaptyvi pastovaus greičio palaikymo sistema (ACC)", "Lane Assist", "Galinio vaizdo kamera"] },
-      { "group": "Salonas", "items": ["Ergo Comfort sėdynės", "Šildomos priekinės sėdynės", "Trijų zonų klimato kontrolė"] },
-      { "group": "Multimedija", "items": ["Discover Pro navigacija", "Digital Cockpit", "App-Connect"] },
-      { "group": "Eksterjeras", "items": ["IQ.Light LED Matrix žibintai", "17 colių ratlankiai", "Kablys"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Adaptyvi pastovaus greičio palaikymo sistema (ACC)",
+          "Lane Assist",
+          "Galinio vaizdo kamera"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Ergo Comfort sėdynės",
+          "Šildomos priekinės sėdynės",
+          "Trijų zonų klimato kontrolė"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "Discover Pro navigacija",
+          "Digital Cockpit",
+          "App-Connect"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "IQ.Light LED Matrix žibintai",
+          "17 colių ratlankiai",
+          "Kablys"
+        ]
+      }
     ],
     "description": [
       "Atnaujintas Passat su 2.0 TDI varikliu ir DSG pavarų dėže. Techninė apžiūra galioja iki 2026 m. gruodžio, prieš pardavimą atliksime naują.",
       "Sumontuotas nuimamas kablys."
     ],
-    "photos": ["/inventory/volkswagen-passat-variant-2019/1", "/inventory/volkswagen-passat-variant-2019/2"],
+    "photos": [
+      "/inventory/volkswagen-passat-variant-2019/1",
+      "/inventory/volkswagen-passat-variant-2019/2"
+    ],
     "status": "available",
     "addedAt": "2026-10-15"
   },
@@ -415,16 +744,45 @@
     "firstRegCountry": "Lietuva",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["Juostos palaikymo sistema", "Galinio vaizdo kamera", "Galiniai parkavimo jutikliai"] },
-      { "group": "Salonas", "items": ["Šildomos priekinės sėdynės", "Šildomas vairas", "Dviejų zonų klimato kontrolė"] },
-      { "group": "Multimedija", "items": ["7 colių jutiklinis ekranas", "Apple CarPlay ir Android Auto"] },
-      { "group": "Eksterjeras", "items": ["17 colių ratlankiai", "Stogo bėgeliai"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Juostos palaikymo sistema",
+          "Galinio vaizdo kamera",
+          "Galiniai parkavimo jutikliai"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Šildomos priekinės sėdynės",
+          "Šildomas vairas",
+          "Dviejų zonų klimato kontrolė"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "7 colių jutiklinis ekranas",
+          "Apple CarPlay ir Android Auto"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "17 colių ratlankiai",
+          "Stogo bėgeliai"
+        ]
+      }
     ],
     "description": [
       "Paprastas ir patikimas benzininis Sportage su mechanine pavarų dėže. Pirktas naujas Lietuvoje, aptarnautas oficialiame servise.",
       "Dvi raktų kopijos, vasarinės ir žieminės padangos."
     ],
-    "photos": ["/inventory/kia-sportage-2019/1", "/inventory/kia-sportage-2019/2"],
+    "photos": [
+      "/inventory/kia-sportage-2019/1",
+      "/inventory/kia-sportage-2019/2"
+    ],
     "status": "available",
     "addedAt": "2026-10-12"
   },
@@ -454,16 +812,47 @@
     "firstRegCountry": "Vokietija",
     "defects": "Be defektų",
     "features": [
-      { "group": "Saugumas", "items": ["Active Brake Assist", "Parkavimo paketas su kamera", "Aklosios zonos asistentas"] },
-      { "group": "Salonas", "items": ["Dalinai odinės sportinės sėdynės", "Šildomos priekinės sėdynės", "Ambientinis apšvietimas"] },
-      { "group": "Multimedija", "items": ["COMAND Online", "Widescreen skaitmeninis skydelis", "Burmester garso sistema"] },
-      { "group": "Eksterjeras", "items": ["Multibeam LED žibintai", "AMG Line paketas", "19 colių AMG ratlankiai"] }
+      {
+        "group": "Saugumas",
+        "items": [
+          "Active Brake Assist",
+          "Parkavimo paketas su kamera",
+          "Aklosios zonos asistentas"
+        ]
+      },
+      {
+        "group": "Salonas",
+        "items": [
+          "Dalinai odinės sportinės sėdynės",
+          "Šildomos priekinės sėdynės",
+          "Ambientinis apšvietimas"
+        ]
+      },
+      {
+        "group": "Multimedija",
+        "items": [
+          "COMAND Online",
+          "Widescreen skaitmeninis skydelis",
+          "Burmester garso sistema"
+        ]
+      },
+      {
+        "group": "Eksterjeras",
+        "items": [
+          "Multibeam LED žibintai",
+          "AMG Line paketas",
+          "19 colių AMG ratlankiai"
+        ]
+      }
     ],
     "description": [
       "E klasės sedanas su AMG Line paketu ir Burmester garso sistema.",
       "Automobilis parduotas."
     ],
-    "photos": ["/inventory/mercedes-benz-e-220-d-2018/1", "/inventory/mercedes-benz-e-220-d-2018/2"],
+    "photos": [
+      "/inventory/mercedes-benz-e-220-d-2018/1",
+      "/inventory/mercedes-benz-e-220-d-2018/2"
+    ],
     "status": "sold",
     "addedAt": "2026-10-05",
     "soldAt": "2026-11-02"

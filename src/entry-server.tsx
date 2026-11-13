@@ -26,12 +26,14 @@ export const routes = [
   '/kontaktai',
   '/privatumo-politika',
   '/nuotraukos',
+  '/patinka',
+  '/krepselis',
   ...vehicles.map(vehiclePath),
 ]
 
 export const sitemapEntries = () =>
   routes
-    .filter((r) => r !== '/nuotraukos')
+    .filter((r) => !['/nuotraukos', '/patinka', '/krepselis'].includes(r))
     .map((r) => {
       const v = vehicles.find((x) => vehiclePath(x) === r)
       return { path: r, lastmod: v ? (v.soldAt ?? v.addedAt) : undefined }
