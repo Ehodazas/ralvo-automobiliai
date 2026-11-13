@@ -126,6 +126,8 @@ npm start
 
 Keep it running with PM2 or systemd, and put Caddy or Nginx in front for HTTPS. Set `TRUST_PROXY=true` when running behind a proxy.
 
+**GitHub Pages (demo hosting, already set up).** Every push to `main` runs [.github/workflows/pages.yml](.github/workflows/pages.yml), which builds the site under the repository's sub-path and publishes it at `https://<owner>.github.io/<repo>/`. Pages serves static files only, so that build sets `VITE_ENQUIRY=off`: the form still validates input, but it says it isn't connected and sends nothing. To build for a sub-path yourself, set `BASE_PATH=/<repo>/` and `VITE_SITE_URL=https://<owner>.github.io/<repo>` before running `npm run build`.
+
 **Option B: a static host (Netlify, Vercel, Cloudflare Pages).** Deploy `dist/`. The pages work, but `/api/uzklausa` must then be provided by that platform's serverless function. Wrap `handleEnquiry` from `server/enquiry.mjs` in the platform's function format, or the form will show its error state.
 
 ## Before launch

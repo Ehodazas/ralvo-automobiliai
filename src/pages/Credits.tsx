@@ -1,4 +1,5 @@
 import credits from '../data/photo-credits.json'
+import { asset } from '../lib/base'
 
 interface Credit {
   file: string
@@ -21,7 +22,7 @@ export default function Credits() {
         <ul className="mt-10 divide-y divide-line border-y border-line">
           {list.map((c) => (
             <li key={c.file} className="grid gap-3 py-4 sm:grid-cols-[120px_1fr]">
-              <img src={`${c.file}-640.webp`} alt="" loading="lazy" className="aspect-[3/2] w-full rounded object-cover sm:w-[120px]" />
+              <img src={asset(`${c.file}-640.webp`)} alt="" loading="lazy" className="aspect-[3/2] w-full rounded object-cover sm:w-[120px]" />
               <div className="text-[14px] leading-relaxed">
                 <a href={c.page} target="_blank" rel="noopener noreferrer" className="font-semibold break-words underline underline-offset-2">
                   {c.title}

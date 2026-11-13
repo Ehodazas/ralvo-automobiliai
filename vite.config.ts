@@ -22,6 +22,8 @@ function enquiryApi(): Plugin {
 }
 
 export default defineConfig({
+  // Pvz. BASE_PATH=/ralvo-automobiliai/ GitHub Pages projekto svetainei
+  base: process.env.BASE_PATH || '/',
   plugins: [react(), tailwindcss(), enquiryApi()],
   build: {
     target: 'es2022',

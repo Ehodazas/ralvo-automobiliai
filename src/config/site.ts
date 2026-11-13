@@ -35,7 +35,8 @@ export const site: SiteConfig = {
   legalName: null,
   companyCode: null,
   vatCode: null,
-  url: 'https://www.ralvo.lt',
+  /** Pagrindinis adresas be galinio brūkšnio; build metu gali būti pakeistas per VITE_SITE_URL */
+  url: import.meta.env.VITE_SITE_URL || 'https://www.ralvo.lt',
   city: 'Kaunas',
   street: 'Savanorių pr.',
   postalCode: null,

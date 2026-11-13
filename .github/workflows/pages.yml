@@ -1,0 +1,58 @@
+# Sugeneruoja svetainę ir paskelbia ją GitHub Pages: https://<savininkas>.github.io/<repozitorija>/
+# GitHub Pages talpina tik statinius failus, todėl užklausos forma šioje versijoje nesiunčia duomenų.
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Nustatyti adresą
+        id: site
+        run: |
+          owner="${GITHUB_REPOSITORY_OWNER,,}"
+          repo="${GITHUB_REPOSITORY#*/}"
+          echo "base=/${repo}/" >> "$GITHUB_OUTPUT"
+          echo "url=https://${owner}.github.io/${repo}" >> "$GITHUB_OUTPUT"
+
+      - run: npm run build
+        env:
+          BASE_PATH: ${{ steps.site.outputs.base }}
+          VITE_SITE_URL: ${{ steps.site.outputs.url }}
+          VITE_ENQUIRY: 'off'
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

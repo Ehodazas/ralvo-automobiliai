@@ -1,6 +1,7 @@
 import { useId, useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { site } from '../config/site'
+import { BASE_URL } from '../lib/base'
 import { activeVehicles, vehicleFullTitle } from '../lib/inventory'
 import type { Vehicle } from '../types'
 import { Icon } from './Icon'
@@ -19,7 +20,10 @@ interface Props {
   compact?: boolean
 }
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+/** Build be serverio (VITE_ENQUIRY=off): forma tikrina laukus, bet duomenų nesiunčia */
+const OFFLINE = import.meta.env.VITE_ENQUIRY === 'off'
+
+const EMAIL_RE =/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 const PHONE_RE = /^\+?[\d\s()-]{8,}$/
 
 export function EnquiryForm({ vehicle, compact }: Props) {
@@ -55,9 +59,15 @@ export function EnquiryForm({ vehicle, compact }: Props) {
       return
     }
 
+    if (OFFLINE) {
+      // Statinė versija (pvz. GitHub Pages): serverio nėra, todėl nieko nesiunčiame
+      setState({ kind: 'error', message: 'Šioje demonstracinėje versijoje forma neprijungta prie serverio, duomenys niekur nesiunčiami.' })
+      return
+    }
+
     setState({ kind: 'sending' })
     try {
-      const res = await fetch('/api/uzklausa', {
+      const res = await fetch(`${BASE_URL}api/uzklausa`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -208,6 +218,12 @@ export function EnquiryForm({ vehicle, compact }: Props) {
           <input name="website" tabIndex={-1} autoComplete="off" />
         </label>
       </div>
+
+      {OFFLINE && state.kind !== 'error' && (
+        <p className="rounded-md bg-surface px-4 py-3 text-[13px] text-muted">
+          Demonstracinė versija: forma tikrina laukus, bet užklausos nesiunčia.
+        </p>
+      )}
 
       {state.kind === 'error' && (
         <div role="alert" className="rounded-md border border-accent/40 bg-accent-soft px-4 py-3 text-[14px] text-accent-dark">

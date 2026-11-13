@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
+import { asset } from '../lib/base'
 import { VehicleCard } from '../components/VehicleCard'
 import { VehicleImage } from '../components/VehicleImage'
 import { addressLine, mapHref, site } from '../config/site'
@@ -155,10 +156,10 @@ export default function Home() {
           <div className="relative mt-10 lg:mt-12">
             <div data-hero-photo data-enter className="overflow-hidden rounded-lg bg-surface">
               <picture>
-                <source media="(min-width: 768px)" srcSet="/media/hero-wide-1280.webp 1280w, /media/hero-wide-1920.webp 1920w" sizes="100vw" />
+                <source media="(min-width: 768px)" srcSet={`${asset('/media/hero-wide-1280.webp')} 1280w, ${asset('/media/hero-wide-1920.webp')} 1920w`} sizes="100vw" />
                 <img
-                  src="/media/hero-tall-900.webp"
-                  srcSet="/media/hero-tall-600.webp 600w, /media/hero-tall-900.webp 900w"
+                  src={asset('/media/hero-tall-900.webp')}
+                  srcSet={`${asset('/media/hero-tall-600.webp')} 600w, ${asset('/media/hero-tall-900.webp')} 900w`}
                   sizes="100vw"
                   alt="Smėlio spalvos Volvo V60 Cross Country automobilių aikštelėje"
                   width={1920}

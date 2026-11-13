@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import { AppRoutes } from './App'
+import { ROUTER_BASENAME } from './lib/base'
 import { vehicles, vehiclePath } from './lib/inventory'
 
 export { metaFor } from './lib/seo'
@@ -10,7 +11,7 @@ export { site } from './config/site'
 export function render(url: string) {
   return renderToString(
     <StrictMode>
-      <StaticRouter location={url}>
+      <StaticRouter basename={ROUTER_BASENAME} location={(ROUTER_BASENAME ?? '') + url}>
         <AppRoutes />
       </StaticRouter>
     </StrictMode>,

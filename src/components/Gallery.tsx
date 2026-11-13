@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type PointerEvent } from 'react'
+import { asset } from '../lib/base'
 import { Icon } from './Icon'
 import { VehicleImage } from './VehicleImage'
 
@@ -139,7 +140,7 @@ export function Gallery({ photos, alt, dimmed }: Props) {
             {lightbox && (
               <img
                 key={photos[index]}
-                src={`${photos[index]}-1600.webp`}
+                src={asset(`${photos[index]}-1600.webp`)}
                 alt={label(index)}
                 className="max-h-full max-w-full rounded object-contain"
               />

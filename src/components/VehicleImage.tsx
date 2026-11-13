@@ -1,4 +1,5 @@
 import type { ImgHTMLAttributes } from 'react'
+import { asset } from '../lib/base'
 
 const WIDTHS = [640, 1080, 1600] as const
 
@@ -14,8 +15,8 @@ interface Props extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'srcSe
 export function VehicleImage({ base, alt, sizes, priority, className, ...rest }: Props) {
   return (
     <img
-      src={`${base}-1080.webp`}
-      srcSet={WIDTHS.map((w) => `${base}-${w}.webp ${w}w`).join(', ')}
+      src={asset(`${base}-1080.webp`)}
+      srcSet={WIDTHS.map((w) => `${asset(base)}-${w}.webp ${w}w`).join(', ')}
       sizes={sizes}
       alt={alt}
       width={1600}
